@@ -16,7 +16,7 @@ var power = function(base, exponent) {
 	}
 };
 
-console.log(power(10, 3));
-console.log(power(5, 2));
-console.log(power(2, 4));
-console.log(power(2, 2));
+// console.log(power(10, 3));
+// console.log(power(5, 2));
+// console.log(power(2, 4));
+// console.log(power(2, 2));

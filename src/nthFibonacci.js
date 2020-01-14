@@ -1,3 +1,5 @@
+/* eslint-disable func-style */
+/* eslint-disable indent */
 // A Fibonacci sequence is a list of numbers that begins with 0 and 1, and each
 // subsequent number is the sum of the previous two.
 
@@ -17,11 +19,29 @@
 // etc...
 
 var nthFibonacci = function(n) {
-	if (n === 4) {
-		return 3;
+	let fibNums = [0, 1];
+	let nth = 2;
+
+	function addFibs() {
+		let lastNum = fibNums[fibNums.length - 1];
+		let secondToLast = fibNums[fibNums.length - 2];
+		let subsequentNumber = lastNum + secondToLast;
+
+		fibNums.push(subsequentNumber);
+		nth++;
+		console.log(fibNums);
+		if (n > fibNums.length) {
+			return addFibs();
+		}
 	}
-	if (n === 5) {
-		return 5;
+
+	if (n > fibNums.length) {
+		return addFibs();
+	} else {
+		let lastNum2 = fibNums[fibNums.length - 1];
+		let secondToLast2 = fibNums[fibNums.length - 2];
+		let subsequentNumber2 = lastNum2 + secondToLast2;
+		console.log(subsequentNumber2);
+		return subsequentNumber2;
 	}
-	return nthFibonacci(n - 1) + nthFibonacci(n - 2);
 };

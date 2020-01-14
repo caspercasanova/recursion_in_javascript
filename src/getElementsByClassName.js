@@ -15,7 +15,7 @@ var getElementsByClassName = function(classNAME) {
 		if (node.classList !== undefined) {
 			for (let i = 0; i < node.classList.length; i++) {
 				if (node.classList[i].includes(classNAME)) {
-					console.log(node.classList[i], "WE ARE PUSHING THIS VALUE RIGHT NOWs");
+					//console.log(node.classList[i], "WE ARE PUSHING THIS VALUE RIGHT NOWs");
 					results.push(node);
 				}
 			}
@@ -28,6 +28,6 @@ var getElementsByClassName = function(classNAME) {
 		}
 	}
 	checkNode(document.body);
-	console.log(results);
+	//console.log(results);
 	return results;
 };
