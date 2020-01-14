@@ -20,28 +20,24 @@
 
 var nthFibonacci = function(n) {
 	let fibNums = [0, 1];
-	let nth = 2;
 
 	function addFibs() {
 		let lastNum = fibNums[fibNums.length - 1];
 		let secondToLast = fibNums[fibNums.length - 2];
 		let subsequentNumber = lastNum + secondToLast;
-
-		fibNums.push(subsequentNumber);
-		nth++;
 		console.log(fibNums);
-		if (n > fibNums.length) {
+		fibNums.push(subsequentNumber);
+		if (n >= fibNums.length) {
 			return addFibs();
+		} else {
+			console.log(subsequentNumber);
+			return subsequentNumber;
 		}
 	}
 
-	if (n > fibNums.length) {
+	if (n >= fibNums.length) {
 		return addFibs();
 	} else {
-		let lastNum2 = fibNums[fibNums.length - 1];
-		let secondToLast2 = fibNums[fibNums.length - 2];
-		let subsequentNumber2 = lastNum2 + secondToLast2;
-		console.log(subsequentNumber2);
-		return subsequentNumber2;
+		return fibNums[fibNums.length - 1] + fibNums[fibNums.length - 2];
 	}
 };
