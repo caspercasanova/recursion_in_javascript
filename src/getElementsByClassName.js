@@ -12,17 +12,18 @@ var getElementsByClassName = function(classNAME) {
 	let results = [];
 
 	function checkNode(node) {
-		if (node.classList) {
+		if (node.classList !== undefined) {
 			for (let i = 0; i < node.classList.length; i++) {
-				if (node.classList[i] === classNAME) {
-					results.push(node.classList[i]);
+				if (node.classList[i].includes(classNAME)) {
+					console.log(node.classList[i], "WE ARE PUSHING THIS VALUE RIGHT NOWs");
+					results.push(node);
 				}
 			}
 		}
 
-		if (node.childNodes) {
-			for (let x = 0; x < node.childNodes.length; x++) {
-				checkNode(node.childNodes[x]);
+		if (node.childNodes.length > 0) {
+			for (let i = 0; i < node.childNodes.length; i++) {
+				checkNode(node.childNodes[i]);
 			}
 		}
 	}
