@@ -1,3 +1,5 @@
+/* eslint-disable quotes */
+/* eslint-disable indent */
 var htmlStrings = [
 	'<div class="targetClassName"></div>',
 	'<div class="otherClassName targetClassName"></div>',
